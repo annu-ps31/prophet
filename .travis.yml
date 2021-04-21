@@ -4,13 +4,13 @@ addons:
     packages:
       - libv8-dev
 language: python
-arch:
-  - amd64
-  - arm64
 
 jobs:
   include:
     - language: python
+      arch:
+        - amd64
+        - arm64
       python:
         - "3.7"
       cache: pip
