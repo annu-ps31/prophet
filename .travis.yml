@@ -4,6 +4,9 @@ addons:
     packages:
       - libv8-dev
 language: python
+arch:
+  - amd64
+  - arm64
 
 jobs:
   include:
