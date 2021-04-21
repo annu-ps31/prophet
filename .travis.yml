@@ -10,9 +10,7 @@ jobs:
     - language: python
       python:
         - "3.7"
-      arch:
-        - amd64
-        - arm64
+      arch: arm64
       cache: pip
       install:
         - pip install --upgrade pip
