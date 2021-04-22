@@ -8,10 +8,9 @@ language: python
 jobs:
   include:
     - language: python
+      arch: arm64
       python:
         - "3.7"
-      arch:
-        - arm64
       cache: pip
       install:
         - pip install --upgrade pip
@@ -24,17 +23,3 @@ jobs:
         - tar -xvf /tmp/cmdstan.tar.gz -C /tmp > /dev/null
         - make -C /tmp/cmdstan-2.22.1/ build > /dev/null
         - CMDSTAN=/tmp/cmdstan-2.22.1 STAN_BACKEND=CMDSTANPY python setup.py develop test
-
-    - language: r
-      r:
-        - devel
-      cache: packages
-      install:
-        - R -e 'install.packages("devtools")'
-        - R -e 'devtools::install_deps("R", dependencies = TRUE)'
-        - cd R
-        - R CMD build .
-        - R CMD INSTALL *tar.gz
-      script:
-        - R -e 'library(prophet); library(devtools); devtools::test()'
-
