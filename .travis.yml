@@ -1,4 +1,7 @@
 dist: xenial
+arch:
+  - amd64
+  - arm64
 addons:
   apt:
     packages:
@@ -8,8 +11,6 @@ language: python
 jobs:
   include:
     - language: python
-    - arch:
-        - arm64
       python:
         - "3.7"
       cache: pip
