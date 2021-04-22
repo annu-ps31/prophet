@@ -8,7 +8,7 @@ language: python
 jobs:
   include:
     - language: python
-      arch:
+    - arch:
         - amd64
         - arm64
       python:
